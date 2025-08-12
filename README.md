@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Faadal Parfumerie</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin:0; padding:0;
+    background:#f9f9f9;
+    color:#222;
+  }
+  header {
+    background:#005f99;
+    color:#fff;
+    padding: 15px 20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+  }
+  header h1 {
+    margin:0;
+    font-size:1.8rem;
+  }
+  main {
+    max-width:800px;
+    margin:20px auto;
+    padding:0 15px;
+  }
+  .intro {
+    margin-bottom:20px;
+  }
+  h2 {
+    margin-top: 0;
+    color: #005f99;
+  }
+  .prices {
+    margin-bottom:10px;
+    font-weight:bold;
+  }
+  .prices ul {
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+  .filters {
+    margin-bottom:20px;
+  }
+  .filters button {
+    background:#005f99;
+    color:#fff;
+    border:none;
+    padding:8px 15px;
+    margin-right:10px;
+    cursor:pointer;
+    border-radius:4px;
+    font-weight:bold;
+    transition: background-color 0.3s;
+  }
+  .filters button.active,
+  .filters button:hover {
+    background:#004470;
+  }
+  .catalogue {
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+  }
+  .parfum {
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    padding:12px 15px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    opacity: 1;
+    transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    overflow: hidden;
+  }
+  .parfum.hide {
+    opacity: 0;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none;
+  }
+  .parfum h3 {
+    margin: 0;
+    font-size:1.1rem;
+  }
+  footer {
+    background:#005f99;
+    color:#fff;
+    text-align:center;
+    padding:15px 10px;
+    margin-top:40px;
+  }
+  .contact-whatsapp {
+    margin: 25px 0;
+    text-align:center;
+  }
+  .contact-whatsapp a {
+    background:#25d366;
+    color:#fff;
+    font-weight:bold;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:50px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.1rem;
+  }
+  .contact-whatsapp a:hover {
+    background:#1ebe5b;
+  }
+  .contact-whatsapp svg {
+    width:24px;
+    height:24px;
+    fill:#fff;
+  }
+  .contact-whatsapp small a {
+    color:#fff;
+    text-decoration:none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Faadal Parfumerie</h1>
+</header>
+
+<main>
+  <section class="intro">
+    <p>Bienvenue chez <strong>Faadal Parfumerie</strong>, votre boutique spécialisée en parfums de qualité pour hommes et femmes, avec des fragrances inspirées des grandes marques à prix abordables.</p>
+    <p><strong>Livraison uniquement à Dakar.</strong></p>
+    <p>Nous proposons une large gamme de senteurs. La liste ci-dessous présente une sélection, mais il existe d’autres parfums que nous ne pouvons pas tous afficher ici.</p>
+  </section>
+
+  <section class="prices" aria-labelledby="prix-title">
+    <h2 id="prix-title">Prix</h2>
+    <ul>
+      <li>Parfums 20 ml : 4 000 FCFA</li>
+      <li>Huiles 3 ml : 1 000 FCFA</li>
+    </ul>
+  </section>
+
+  <section class="filters" role="toolbar" aria-label="Filtrer les parfums">
+    <button class="active" data-filter="all" aria-pressed="true">Tous</button>
+    <button data-filter="homme" aria-pressed="false">Hommes</button>
+    <button data-filter="femme" aria-pressed="false">Femmes</button>
+  </section>
+
+  <section class="catalogue" id="catalogue" aria-live="polite" aria-relevant="additions removals">
+    <!-- Parfums hommes -->
+    <div class="parfum" data-type="homme"><h3>212 Men</h3></div>
+    <div class="parfum" data-type="homme"><h3>Azzaro Chrome</h3></div>
+    <div class="parfum" data-type="homme"><h3>Baccara Vanille</h3></div>
+    <div class="parfum" data-type="homme"><h3>Black XS</h3></div>
+    <div class="parfum" data-type="homme"><h3>Bleu de Chanel</h3></div>
+    <div class="parfum" data-type="homme"><h3>Bois d’Argent</h3></div>
+    <div class="parfum" data-type="homme"><h3>Hugo Boss</h3></div>
+    <div class="parfum" data-type="homme"><h3>Invictus</h3></div>
+    <div class="parfum" data-type="homme"><h3>Khamrah</h3></div>
+    <div class="parfum" data-type="homme"><h3>Madawi</h3></div>
+    <div class="parfum" data-type="homme"><h3>Mont Blanc Legend</h3></div>
+    <div class="parfum" data-type="homme"><h3>Moussuf</h3></div>
+    <div class="parfum" data-type="homme"><h3>One Million</h3></div>
+    <div class="parfum" data-type="homme"><h3>Oud Bouquet</h3></div>
+    <div class="parfum" data-type="homme"><h3>Phantom</h3></div>
+    <div class="parfum" data-type="homme"><h3>Pi (Givenchy)</h3></div>
+    <div class="parfum" data-type="homme"><h3>Poussière d’Or</h3></div>
+    <div class="parfum" data-type="homme"><h3>Sauvage</h3></div>
+    <div class="parfum" data-type="homme"><h3>Scandal Homme</h3></div>
+    <div class="parfum" data-type="homme"><h3>Serign Saaliw</h3></div>
+    <div class="parfum" data-type="homme"><h3>Sexy Coco</h3></div>
+    <div class="parfum" data-type="homme"><h3>Sculpture</h3></div>
+    <div class="parfum" data-type="homme"><h3>Ultra Mâle</h3></div>
+    <div class="parfum" data-type="homme"><h3>Wanted</h3></div>
+
+    <!-- Parfums femmes -->
+    <div class="parfum" data-type="femme"><h3>Aisha</h3></div>
+    <div class="parfum" data-type="femme"><h3>Ambroisie</h3></div>
+    <div class="parfum" data-type="femme"><h3>Black Opium</h3></div>
+    <div class="parfum" data-type="femme"><h3>Candy Love</h3></div>
+    <div class="parfum" data-type="femme"><h3>Chloé</h3></div>
+    <div class="parfum" data-type="femme"><h3>Devotion</h3></div>
+    <div class="parfum" data-type="femme"><h3>Good Girl</h3></div>
+    <div class="parfum" data-type="femme"><h3>Hypnotic</h3></div>
+    <div class="parfum" data-type="femme"><h3>Interdit</h3></div>
+    <div class="parfum" data-type="femme"><h3>Kim K</h3></div>
+    <div class="parfum" data-type="femme"><h3>La Vie est Belle</h3></div>
+    <div class="parfum" data-type="femme"><h3>Libre</h3></div>
+    <div class="parfum" data-type="femme"><h3>Lolita Sweet</h3></div>
+    <div class="parfum" data-type="femme"><h3>My Way</h3></div>
+    <div class="parfum" data-type="femme"><h3>Petite Robe Noire</h3></div>
+    <div class="parfum" data-type="femme"><h3>Scandal Femme</h3></div>
+    <div class="parfum" data-type="femme"><h3>Soft</h3></div>
+    <div class="parfum" data-type="femme"><h3>Sokhna Diarra</h3></div>
+    <div class="parfum" data-type="femme"><h3>Tahaara</h3></div>
+    <div class="parfum" data-type="femme"><h3>Yara</h3></div>
+  </section>
+
+  <section class="contact-whatsapp">
+    <a href="https://wa.me/221773557037" target="_blank" rel="noopener noreferrer" aria-label="Contactez Faadal Parfumerie sur WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.52 3.48A11.87 11.87 0 0012 0C5.37 0 .02 5.34.02 11.94c0 2.1.55 4.13 1.59 5.92L0 24l6.34-1.65a11.94 11.94 0 005.62 1.44c6.63 0 12-5.34 12-11.94 0-3.19-1.24-6.18-3.44-8.37zM12 21.76a9.73 9.73 0 01-5.15-1.49l-.37-.23-3.77.98.99-3.68-.24-.38A9.7 9.7 0 012.24 12c0-5.41 4.41-9.8 9.76-9.8 2.61 0 5.06 1.02 6.9 2.87a9.682 9.682 0 012.86 6.93c0 5.41-4.42 9.8-9.76 9.8zm5.31-7.15c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.19.29-.74.95-.91 1.15-.17.19-.34.21-.63.07-.29-.15-1.23-.45-2.34-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.49-.66-.5-.17-.01-.36-.01-.55-.01-.19 0-.51.07-.78.36-.27.29-1.03 1.01-1.03 2.47 0 1.46 1.05 2.87 1.2 3.07.15.19 2.07 3.15 5.02 4.41.7.3 1.24.48 1.66.61.7.21 1.34.18 1.85.11.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z"/></svg>
+      WhatsApp : <small><a href="tel:+221773557037">77 355 70 37</a></small>
+    </a>
+  </section>
+  
+<section class="social-media" style="text-align:center; margin: 15px 0; font-family: Arial, sans-serif;">
+  <h2 style="color:#005f99; margin-bottom:10px;">Suivez-nous sur les réseaux sociaux</h2>
+
+  <a href="https://vm.tiktok.com/ZMAJ4eYro/" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Faadal Parfumerie" 
+     style="margin-right:30px; text-decoration:none; color:#000; font-weight: bold; display: inline-flex; align-items: center; gap:8px; font-size: 1.1rem;">
+    <!-- Icône TikTok -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="32" height="32" fill="currentColor">
+      <path d="M184 56v88a48 48 0 01-48-48h-24a72 72 0 0068 72v24a96 96 0 01-92-92h24a48 48 0 0048 48V56z"/>
+    </svg>
+    TikTok
+  </a>
+
+  <a href="https://www.snapchat.com/add/muhamadkhadija5?share_id=SnCgK6lhRXo&locale=fr-SN" target="_blank" rel="noopener noreferrer" aria-label="Snapchat de Faadal Parfumerie" 
+     style="text-decoration:none; color:#FFFC00; font-weight: bold; display: inline-flex; align-items: center; gap:8px; font-size: 1.1rem;">
+    <!-- Icône Snapchat -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#FFFC00">
+      <path d="M12 2C7.03 2 3.25 5.77 3.25 10.75c0 4.38 3.18 7.88 7.5 8.06v-3.04a4.62 4.62 0 01-1.5-.28c-1.1-.41-1.46-.46-1.46-1.04 0-.54.29-.63.82-1.12a3.53 3.53 0 002.49-1.62c.18-.33.17-.38-.06-.66a2.68 2.68 0 00-1.25-1.04c-1.12-.5-1.02-.77-.3-1.02.92-.38 2.46-.45 3.14-.17.5.2.69.45.52.88-.16.44-.65.83-1.07 1a4.05 4.05 0 01-1.22.19c-.66 0-.77.04-.55.41.38.56 1.12.78 2.16.65 1.67-.2 3.47-.86 3.85-1.53a.4.4 0 00-.24-.57c-.31-.13-1.12.07-1.86.42-.94.46-1.45.51-1.45.13 0-.17.17-.42.37-.55.43-.27.62-.69.51-1.19-.13-.61-.62-.87-1.15-.7-1.48.48-3.13 2.03-3.13 3.21 0 1.5 1.37 2.18 3.5 1.86a5.97 5.97 0 002.28-.95v2.4a8.48 8.48 0 007.5-8.06c0-4.98-3.79-8.75-8.75-8.75z"/>
+    </svg>
+    Snapchat
+  </a>
+</section>
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('.filters button');
+  const parfums = document.querySelectorAll('.parfum');
+
+  buttons.forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+  });
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      const filter = btn.getAttribute('data-filter');
+      parfums.forEach(p => {
+        if (filter === 'all' || p.getAttribute('data-type') === filter) {
+          p.classList.remove('hide');
+          setTimeout(() => {
+            p.style.display = 'flex';
+          }, 300);
+        } else {
+          p.style.display = 'none';
+          p.classList.add('hide');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
